@@ -242,11 +242,6 @@ async def start(client, message):
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
             image_url="https://telegra.ph/file/7309642d3dc3ae6e1ecc8.jpg"
-
-            # Create inline keyboard buttons with URLs
-            buttons = [
-        [InlineKeyboardButton("Button 1", url="http://example.com/button1")]
-            ]
             await message.reply_photo(
                 caption=f"<b>Hey {message.from_user.mention}, \n\n Yᴏᴜ Aʀᴇ Nᴏᴡ Vᴇʀɪғɪᴇᴅ Fᴏʀ Tᴏᴅᴀʏ ✅,\n\nNow You Have Unlimited Access For All Movies Oʀ Sᴇʀɪᴇs Till Today Midnight 😎.\n\nɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ꜰɪʟᴇs ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ (ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪꜰʏ)\n\nᴄʟɪᴄᴋ /plan ꜰᴏʀ ᴍᴏʀᴇ ᴅᴇᴛᴀɪʟs</b>",
                 parse_mode='HTML',
