@@ -53,6 +53,24 @@ class temp(object):
     SHORT = {}
     SETTINGS = {}
 
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
+# Define a command handler for /plan
+def plan(update, context):
+    # Reply with the predefined message
+    update.message.reply_text("<b> - ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs - \n\n - 50ʀs - 1 ᴍᴏɴᴛʜs- 120ʀs - 3 ᴍᴏɴᴛʜs- 220ʀs - 6 ᴍᴏɴᴛʜs- 400ʀs - 1 ʏᴇᴀʀs \n\n 🎁 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs 🎁 \n\n 😁 ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ🔖 ᴅɪʀᴇᴄᴛ ғɪʟᴇs🗂 ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs👾 ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴀᴠᴀɪʟᴀʙʟᴇ🫶🏽 ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ🔥 ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 1 ʜᴏᴜʀ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ \n\n ✨ ᴜᴘɪ ɪᴅ - jngohell@oksbi \n\n 💢 ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ \n\n ‼️ ᴀғᴛᴇʀ sᴇɴᴅɪɴɢ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴜs sᴏᴍᴇ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ʟɪsᴛ</b>")
+
+# Define a handler for regular text messages
+def handle_text(update, context):
+    # Access the text of the message
+    text = update.message.text
+    
+    # Check if the text contains a specific keyword, for example, "/keyword"
+    if "/keyword" in text:
+        # Reply with a predefined message for the keyword
+        update.message.reply_text("You mentioned the keyword in your text.")
+
+
 async def is_subscribed(bot, query):
     try:
         user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
