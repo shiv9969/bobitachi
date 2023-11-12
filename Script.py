@@ -13,6 +13,7 @@ class script(object):
 ‣ ᴅᴀᴛᴀʙᴀꜱᴇ : <a href="https://www.mongodb.com/">ᴍᴏɴɢᴏ ᴅʙ</a>
 ‣ ʜᴏꜱᴛᴇᴅ ᴏɴ : <a href="https://render.com/">Render</a>
 ‣ ʙᴜɪʟᴅ ꜱᴛᴀᴛᴜꜱ : ᴠ.𝟹.𝟶 [ꜱᴛᴀʙʟᴇ]</b>"""
+
     PREMIUM_TXT = """
 <b> - ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs - 
 
