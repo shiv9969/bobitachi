@@ -252,8 +252,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/+vVNMJXXiR2plY2Vl"),
-                          InlineKeyboardButton("✅ CLICK HERE TO GET FILE ✅", callback_data=f'delfile#{file_id}')
+                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/+vVNMJXXiR2plY2Vl")
                          ]
                     ]
                 )
