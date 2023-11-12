@@ -236,7 +236,7 @@ async def next_page(bot, query):
     time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
     remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
     if settings["button"]:
-        cap = f"<b> 🎬 Tɪᴛʟᴇ : {search}\n\n📂 Fɪʟᴇꜱ : {total}\n\n⏰ Rᴇsᴜʟᴛ Sʜᴏᴡɴ Iɴ : {remaining_seconds} <i>seconds 🔥</i>\n\n📝 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {query.from_user.mention}\n\n⚜️ Pᴏᴡᴇʀᴇᴅ Bʏ : <a href=https://t.me/N33VARP>𝗡𝟯𝟯𝗩𝗔𝗥𝗣</a></b>"
+        cap = f"<b> 🎬 Tɪᴛʟᴇ : {search}\n\n📂 Fɪʟᴇꜱ : {total}\n\n⏰ Rᴇsᴜʟᴛ Sʜᴏᴡɴ Iɴ : {remaining_seconds} <i>seconds 🔥</i>\n\n📝 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {query.from_user.mention}\n\n⚜️ Pᴏᴡᴇʀᴇᴅ Bʏ : <a href=https://t.me/BoB_Files>Bob Files</a></b>"
     else:
         # cap = f"<b>Hᴇʏ {query.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
         cap = f"<b>Hᴇʏ {query.from_user.mention}, Fᴏᴜɴᴅ {total} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}\n\n</b>"
@@ -1074,7 +1074,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                               InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK),
                           InlineKeyboardButton('ɢʀᴏᴜᴘ', url=GRP_LNK)
                        ],[
-                          InlineKeyboardButton("☘️ 𝗡𝟯𝟯𝗩𝗔𝗥𝗣 ☘️", url="https://t.me/N33VARP")
+                          InlineKeyboardButton("☘️ Bob Files ☘️", url="https://t.me/BoB_Files")
                              ]
                             ]
                         )
@@ -1167,7 +1167,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                   InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK),
                           InlineKeyboardButton('ɢʀᴏᴜᴘ', url=GRP_LNK)
                        ],[
-                          InlineKeyboardButton("☘️ 𝗡𝟯𝟯𝗩𝗔𝗥𝗣 ☘️", url="https://t.me/N33VARP")
+                          InlineKeyboardButton("☘️ Bob Files ☘️", url="https://t.me/BoB_Files")
                  ]
                 ]
             )
@@ -1541,8 +1541,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
-                ],[
-                    InlineKeyboardButton('☘️ 𝗡𝟯𝟯𝗩𝗔𝗥𝗣 ☘️', url="https://t.me/N33VARP")
+                ],[ 
+                    InlineKeyboardButton('💰 Buy Premium For Ad Free Movies', callback_data='premium')
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1630,7 +1630,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('❗❗ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ❗❗', callback_data='disclaimer')
         ], [
-            InlineKeyboardButton('ᴏᴡɴᴇʀ', url="https://t.me/N33VARP"),
+            InlineKeyboardButton('ᴏᴡɴᴇʀ', url="https://t.me/BoB_Files"),
             InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ', url=CHNL_LNK)
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
@@ -1646,6 +1646,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "premium":
+        buttons = [[
+            InlineKeyboardButton('📸 Send Screenshot 📸', url="https://t.me/BoB_Files"),
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.premium_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )    
     elif query.data == "disclaimer":
         buttons = [[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='about')
@@ -2162,7 +2178,7 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"<b>\n📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>🎬 Tɪᴛʟᴇ : {search}\n\n📂 Fɪʟᴇꜱ : {total}\n\n⏰ Rᴇsᴜʟᴛ Sʜᴏᴡɴ Iɴ : {remaining_seconds} <i>seconds 🔥</i>\n\n📝 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {query.from_user.mention}\n\n⚜️ Pᴏᴡᴇʀᴇᴅ Bʏ : <a href=https://t.me/N33VARP>𝗡𝟯𝟯𝗩𝗔𝗥𝗣</a></b>"
+            cap = f"<b>🎬 Tɪᴛʟᴇ : {search}\n\n📂 Fɪʟᴇꜱ : {total}\n\n⏰ Rᴇsᴜʟᴛ Sʜᴏᴡɴ Iɴ : {remaining_seconds} <i>seconds 🔥</i>\n\n📝 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {query.from_user.mention}\n\n⚜️ Pᴏᴡᴇʀᴇᴅ Bʏ : <a href=https://t.me/BoB_Files>Bob Files</a></b>"
         else:
             # cap = f"<b>Hᴇʏ {message.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
             cap = f"<b>Hᴇʏ {message.from_user.mention}, Fᴏᴜɴᴅ {total_results} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}\n\n</b>"

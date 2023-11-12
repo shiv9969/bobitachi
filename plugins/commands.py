@@ -51,6 +51,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+                 ],[ 
+                    InlineKeyboardButton('💰 Buy Premium For Ad Free Movies', callback_data='premium')   
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_text("👀")
@@ -106,6 +108,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+                ],[ 
+                    InlineKeyboardButton('💰 Buy Premium For Ad Free Movies', callback_data='premium')    
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(

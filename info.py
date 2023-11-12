@@ -49,8 +49,8 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', True))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shrinkforearn.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '2c37d1547462070725e710dc715d15bf1275a38b')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Upshrink.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '7670f707da67c403fb007e6b1fcde52011186e7a')
 SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'paisakamalo.in')
 SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '16badb4cdfbd26689b88c28d4385b24b5ec85d81')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
