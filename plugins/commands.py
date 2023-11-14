@@ -245,6 +245,9 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
+        g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=allfiles_{file_id}", True)
+        else:
+            g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=allfiles_{file_id}", False)
             image_url="https://telegra.ph/file/7309642d3dc3ae6e1ecc8.jpg"
 
             await message.reply_photo(
@@ -252,7 +255,8 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/REQUESTING_MOVIES_SERIES_GROUPS")
+                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/REQUESTING_MOVIES_SERIES_GROUPS"),
+                          InlineKeyboardButton('✅ Click Here To Get File ✅', url=g)
                          ]
                     ]
                 )
