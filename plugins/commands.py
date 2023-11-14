@@ -245,18 +245,12 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
-        g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=allfiles_{file_id}", True)
-        else:
-            g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=allfiles_{file_id}", False)
-            image_url="https://telegra.ph/file/7309642d3dc3ae6e1ecc8.jpg"
-
             await message.reply_photo(
                 photo=image_url, caption=f"<b>Hey {message.from_user.mention}, \n\n Yᴏᴜ Aʀᴇ Nᴏᴡ Vᴇʀɪғɪᴇᴅ Fᴏʀ Tᴏᴅᴀʏ ✅,\n\nNow You Have Unlimited Access For All Movies Oʀ Sᴇʀɪᴇs Till Today Midnight 😎.\n\nɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ꜰɪʟᴇs ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ (ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪꜰʏ)</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/REQUESTING_MOVIES_SERIES_GROUPS"),
-                          InlineKeyboardButton('✅ Click Here To Get File ✅', url=g)
+                          InlineKeyboardButton('💫 JOIN PLEASE 💫', url="https://t.me/REQUESTING_MOVIES_SERIES_GROUPS")
                          ]
                     ]
                 )
@@ -273,7 +267,7 @@ async def start(client, message):
         st = await client.get_chat_member(chat_id, userid)
         if (
                 st.status != enums.ChatMemberStatus.ADMINISTRATOR
-                and st.status != enums.ChatMemberStatus.OWNER
+                and st.status != enums.ChatMemberStaus.OWNER
         ):
             g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=allfiles_{file_id}", True)
         else:
